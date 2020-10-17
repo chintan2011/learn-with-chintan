@@ -6,6 +6,7 @@ import data from './data.json';
 import ScrollUpButton from "react-scroll-up-button"
 
 function App() {
+  document.title='learn-with-chintan'
   return (
     <div className="app">
       <div className="app__header">
