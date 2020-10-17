@@ -1,0 +1,22 @@
+.social-icon{
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    text-align: center;
+    
+}
+
+.position__view{
+    position: relative;
+    text-align: center;
+    justify-content: center;
+}
+
+.contactinfo{
+    width: 100%;
+    text-align: center;
+    position: relative;
+    justify-content: center;
+    margin-top: 10px;
+}
+

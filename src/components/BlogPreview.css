@@ -1,0 +1,17 @@
+.blog-preview-container{
+    border: 10px solid green;
+    margin: 20px;
+    padding: 50px;
+    border-radius: 15px;
+    word-wrap    : break-word;
+    overflow-wrap: break-word;
+}
+
+.react-bs-read-more{
+    margin-top: 15px;
+    
+}
+
+.react-card-content{
+    margin-top: 40px;
+}

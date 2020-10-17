@@ -1,0 +1,65 @@
+[
+    {
+        "header" : "Add markdown in your django app like GitHub",
+        "language" : "Python",
+        "framework" : "Django",
+        "github" : "e.github.com",
+        "hostingUrl": "h.hosting.com",
+        "content" : {
+            "title" : "Add markdown for your contents",
+            "subTitle" : "We will be using django-markdown-deux",
+            "steps": [
+                "Install the latest release from PyPI.",
+                "```pip install django-markdown-deux```",
+                "Load markdown tags into your html file (you can add this on top of file or you can use it in your <div> as well).",
+                "``` {% load markdown_deux_tags %}``` on top or your desired <div> markdown_deux_tags",
+                "Using the mardown, for all the elements you want to use markdown you can include markdown in it. ``` <p>{{ object.content | markdown | linebreaks }}</p> ```"
+            ]
+        }
+    },
+
+    {
+        "header" : "How to add tech / programming language images dynamically in django",
+        "language" : "Python, HTML",
+        "framework" : "Django",
+        "github" : "https://github.com/chintan2011/learnWithChintan",
+        "hostingUrl": "PlaceHolder",
+        "content" : {
+            "title" : "In this tutorial we will be learning how to add programming language images to your django html page.",
+            "subTitle" : "My approach will be using icons from here for getting icons so we dont need to download, store and manage all the tech images into our django app, thus saving space",
+            "steps": [
+                "First, lets add a new field into our models.py. images = ListCharField(base_field=CharField(max_length=100),size=6,blank=True,max_length=(6 * 1000) # 6 * 10 character nominals, plus commas)",
+                "If you notice and not just doing ~~copy-paste~~ we are using a field called ListCharField. This will allow us to use Charfield and convert it to list items seperated by ,.",
+                "Note: You would be required to do the following imports in your models.py from django_mysql.models import ListCharField from django.db.models import CharField, Model",
+                "Before we move further, lets migrate these changes and run server. Run",
+                "python manage.py makemigrations",
+                "python manage.py migrate",
+                "python manage.py runserver",
+                "If you are running to errors, check and verify the steps above.",
+                "Lets populate our database with the new field that we added.",
+                "Goto 127.0.0.1:8000/admin, and login with your admin user.",
+                "Go to your model and add icon classes as per your desire seperated by ,.",
+                "For example",
+                "devicon-django-plain-wordmark colored,devicon-python-plain colored",
+                "Find more icons here.",
+                "Just copy-paste the class name for Font versions icons.",
+                "Ok we are all set for the back-end.",
+                "Now add a new file called tech_icons.html into your templates folder and add the following.",
+                "{% block tech_icons %}",
+                "{% for image in post.images %}",
+                "<i class='{{image}}' style='font-size:55px'></i>&ensp;",
+                "{% endfor %}",
+                "{% endblock tech_icons %}",
+                "Again if you notice and not just doing ~~copy-paste~~, you will see we are using forloop inside HTML.",
+                "Yes forloop in HTML!!!!!!!",
+                "Here we are using {% block tech_icons %} at start and {% endblock tech_icons %} at end so we can use this HTML file as kind of like module that we can import anywhere we want.",
+                "Hang on, we are almost there.....",
+                "Import our newly created HTML module into your desired existing HTML file or div block.",
+                "Add {% block tech_icons %} at the beginning of your html file and {% endblock tech_icons %} at the end.",
+                "Now add {% include 'tech_icons.html' %} in your html file where you want to use these icons.",
+                "And we are done...!!!!!!",
+                "Happy Pythoning........."
+            ]
+        }
+    }
+]

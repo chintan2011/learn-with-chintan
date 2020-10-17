@@ -1,0 +1,20 @@
+.contact-info-container{
+    text-align: center;
+    border: 10px solid green;
+    margin: 20px;
+    padding: 50px;
+    border-radius: 15px;
+    cursor: pointer;
+    word-wrap    : break-word;
+    overflow-wrap: break-word;
+    height: auto;
+}
+
+.profile__picture{
+    margin-bottom: 20px;
+}
+
+.portfolio-text{
+    font-size: large;
+    font-weight: bold;
+}
