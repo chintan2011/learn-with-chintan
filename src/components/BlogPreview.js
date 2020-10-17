@@ -14,14 +14,14 @@ function BlogPreview({ data }) {
         ## Header 2
         _ italic _
         ** bold **
-        <b> bold Html </b>
+        <b> bold Html </b> markdown reference link https://github.com/remarkjs/react-markdown
     */
     const [readMore,setReadMore]=useState(false);
     const extraContent=<div className="react-card-content">
     {
         data.content.steps.map((elem)=> {
             return(
-                <ReactMarkdown source={elem}/>
+                <ReactMarkdown source={elem} escapeHtml={false}/>
             )
         })
     }</div>
@@ -33,20 +33,22 @@ function BlogPreview({ data }) {
                 <div className="react-card-header">
                     <ReactMarkdown source={'## '+data.header}/>
                 </div>
-                <div className="react-card-language-framework">
-                    <ReactMarkdown source={'```'+ data.language + '```'}/>
-                    <ReactMarkdown source={'```' + data.framework + '```'}/>
+                <div className="react-card-language">
+                    <ReactMarkdown source={'##### With: ' + data.language}/>
+                </div>
+
+                <div className="react-card-framework">
+                    <ReactMarkdown source={'##### Using: ' + data.framework}/>
                 </div>
 
                 <div className="react-card-github">
                     {
-                        //data.github ? 'Github: ' + <a href="{data.github}">{data.github}</a> : ""
                         (()=> {
                             console.log(data.github)
                             if(data.github){
                                 return(
                                     <div>
-                                        Github: <a href="{data.github}">{data.github}</a>
+                                        <h6>Github: <a href="{data.github}">{data.github}</a></h6>
                                     </div>
                                 )
                             }
@@ -62,12 +64,40 @@ function BlogPreview({ data }) {
                             if(data.hostingUrl){
                                 return(
                                     <div>
-                                        Hosting Url: <a href="{data.hostingUrl}">{data.hostingUrl}</a>
+                                        <h6>Hosting Url: <a href="{data.hostingUrl}">{data.hostingUrl}</a></h6>
                                     </div>
                                 )
                             }
                         })
                     ()}
+                </div>
+
+                <div className="react-card-content-title">
+                {
+                    (()=> {
+                        if(data.content.title){
+                            return(
+                                <div>
+                                    <ReactMarkdown source={data.content.title}/>
+                                </div>
+                            )
+                        }
+                    })
+                ()}
+                </div>
+
+                <div className="react-card-content-subtitle">
+                {
+                    (()=>{
+                        if(data.content.subtitle){
+                            return(
+                                <div>
+                                    <ReactMarkdown source={data.content.subtitle}/>
+                                </div>
+                            )
+                        }
+                    })
+                ()}
                 </div>
                 <Button 
                     variant="outline-success"  

@@ -2,63 +2,136 @@
     {
         "header" : "Add markdown in your django app like GitHub",
         "language" : "Python",
-        "framework" : "Django",
-        "github" : "e.github.com",
-        "hostingUrl": "h.hosting.com",
+        "framework" : "```django-markdown-deux``` with Django",
+        "github" : "https://github.com/chintan2011/learnWithChintan",
+        "hostingUrl": "",
         "content" : {
-            "title" : "Add markdown for your contents",
-            "subTitle" : "We will be using django-markdown-deux",
+            "title" : "",
+            "subtitle" : "We will be using ```django-markdown-deux``` library",
             "steps": [
                 "Install the latest release from PyPI.",
                 "```pip install django-markdown-deux```",
-                "Load markdown tags into your html file (you can add this on top of file or you can use it in your <div> as well).",
-                "``` {% load markdown_deux_tags %}``` on top or your desired <div> markdown_deux_tags",
-                "Using the mardown, for all the elements you want to use markdown you can include markdown in it. ``` <p>{{ object.content | markdown | linebreaks }}</p> ```"
+                "Load markdown tags into your html file (you can add this on top of file or you can use it in your ```<div>``` as well).",
+                "``` {% load markdown_deux_tags %}``` on top or your desired `<div>` markdown_deux_tags",
+                "Using the mardown, for all the elements you want to use markdown you can include markdown in it.",
+                "``` <p>{{ object.content | markdown | linebreaks }}</p> ```"
             ]
         }
     },
 
     {
         "header" : "How to add tech / programming language images dynamically in django",
-        "language" : "Python, HTML",
+        "language" : "Python, HTML, CSS",
         "framework" : "Django",
         "github" : "https://github.com/chintan2011/learnWithChintan",
-        "hostingUrl": "PlaceHolder",
+        "hostingUrl": "",
         "content" : {
             "title" : "In this tutorial we will be learning how to add programming language images to your django html page.",
-            "subTitle" : "My approach will be using icons from here for getting icons so we dont need to download, store and manage all the tech images into our django app, thus saving space",
+            "subtitle" : "My approach will be using icons from here for getting icons so we dont need to download, store and manage all the tech images into our django app, thus saving space.",
             "steps": [
-                "First, lets add a new field into our models.py. images = ListCharField(base_field=CharField(max_length=100),size=6,blank=True,max_length=(6 * 1000) # 6 * 10 character nominals, plus commas)",
-                "If you notice and not just doing ~~copy-paste~~ we are using a field called ListCharField. This will allow us to use Charfield and convert it to list items seperated by ,.",
-                "Note: You would be required to do the following imports in your models.py from django_mysql.models import ListCharField from django.db.models import CharField, Model",
-                "Before we move further, lets migrate these changes and run server. Run",
-                "python manage.py makemigrations",
-                "python manage.py migrate",
-                "python manage.py runserver",
+                "First, lets add a new field into our ```models.py```.",
+                "```images = ListCharField(base_field=CharField(max_length=100),size=6,blank=True,max_length=(6 * 1000) # 6 * 10 character nominals, plus commas)```",
+                "If you notice and not just doing ~~copy-paste~~ we are using a field called `ListCharField`. This will allow us to use Charfield and convert it to list items seperated by `,`.",
+                "##### Note: You would be required to do the following imports in your models.py.<p></p>",
+                "`from django_mysql.models import ListCharField`",
+                "`from django.db.models import CharField, Model`",
+                "Before we move further, lets migrate these changes and run server.",
+                "`python manage.py makemigrations`",
+                "`python manage.py migrate`",
+                "`python manage.py runserver`",
                 "If you are running to errors, check and verify the steps above.",
                 "Lets populate our database with the new field that we added.",
-                "Goto 127.0.0.1:8000/admin, and login with your admin user.",
-                "Go to your model and add icon classes as per your desire seperated by ,.",
+                "Goto `127.0.0.1:8000/admin`, and login with your `admin` user.",
+                "Go to your model and add icon classes as per your desire seperated by `,`.",
                 "For example",
-                "devicon-django-plain-wordmark colored,devicon-python-plain colored",
-                "Find more icons here.",
+                "`devicon-django-plain-wordmark colored,devicon-python-plain colored`",
+                "Find more icons at <a>https://devicon.dev/",
                 "Just copy-paste the class name for Font versions icons.",
                 "Ok we are all set for the back-end.",
-                "Now add a new file called tech_icons.html into your templates folder and add the following.",
-                "{% block tech_icons %}",
-                "{% for image in post.images %}",
-                "<i class='{{image}}' style='font-size:55px'></i>&ensp;",
-                "{% endfor %}",
-                "{% endblock tech_icons %}",
-                "Again if you notice and not just doing ~~copy-paste~~, you will see we are using forloop inside HTML.",
-                "Yes forloop in HTML!!!!!!!",
-                "Here we are using {% block tech_icons %} at start and {% endblock tech_icons %} at end so we can use this HTML file as kind of like module that we can import anywhere we want.",
+                "Now add a new file called `tech_icons.html` into your `templates` folder and add the following.",
+                "`{% block tech_icons %}`",
+                "`{% for image in post.images %}`",
+                "`<i class='{{image}}' style='font-size:55px'></i>&ensp;`",
+                "`{% endfor %}`",
+                "`{% endblock tech_icons %}`",
+                "Again if you notice and not just doing ~~copy-paste~~, you will see we are using `forloop` inside `HTML`.",
+                "Yes forloop in HTML !!!!!!!",
+                "Here we are using `{% block tech_icons %}` at start and `{% endblock tech_icons %}` at end so we can use this `HTML` file as kind of like module that we can import anywhere we want.",
                 "Hang on, we are almost there.....",
-                "Import our newly created HTML module into your desired existing HTML file or div block.",
-                "Add {% block tech_icons %} at the beginning of your html file and {% endblock tech_icons %} at the end.",
-                "Now add {% include 'tech_icons.html' %} in your html file where you want to use these icons.",
+                "Import our newly created `HTML` module into your desired existing `HTML` file or `div` block.",
+                "Add `{% block tech_icons %}` at the beginning of your html file and `{% endblock tech_icons %}` at the end.",
+                "Now add `{% include 'tech_icons.html' %}` in your `html` file where you want to use these icons.",
                 "And we are done...!!!!!!",
-                "Happy Pythoning........."
+                "<strong> Happy Pythoning......... </strong>"
+            ]
+        }
+    },
+    {
+        "header" : "learnWithChintan - Blog using Django (focusing on backend only)",
+        "language" : "Python, Bootstrap, HTML, CSS",
+        "framework" : "Django",
+        "github" : "https://github.com/chintan2011/learnWithChintan",
+        "hostingUrl": "",
+        "content" : {
+            "title" : "Codebase for this website is built entirely from scratch.",
+            "subtitle" : "To get started, you would require `python3` and `pip3` pre-installed.",
+            "steps": [
+                "Install virtualenv <br> `pip3 install virtualenv`",
+                "Create your own virtualenv. <br> `python3 -m virtualenv <your virtualenv name>`",
+                "Activate your virtualenv. <br> `source <your_virtualenv_dir>/bin/activate`",
+                "Install django. <br> `pip3 install Django`",
+                "Clone the github repo mentioned above.",
+                "Go into `learnwithChintan` dir and try running server locally. <br> `python3 manage.py runserver`",
+                "Once you are able to run app locally, create your own superuser for maindb access. <br> `python manage.py createsuperuser`"
+            ]
+        }
+    },
+    {
+        "header" : "Realtime Polling/Voting App",
+        "language" : "JavsScript, HTML CSS",
+        "framework" : "NodeJS, Express, MongoDB",
+        "github" : "https://github.com/chintan2011/pusherpoll",
+        "hostingUrl": "",
+        "content" : {
+            "title" : "Follow the steps to configure this app to run your machine with your own mongoDB and list of team building activities;",
+            "subtitle" : "To get started you are required to have mongoose db.",
+            "steps": [
+                "Under `config/db.js`, on line 7 in `mongoose.connect('')` add your mongoDB cluster url with username and password.",
+                "Go into `pusherpoll` dir and run `npm install`, a new `node_modules` dir will be created for your system.",
+                "To run execute <br> `npm run dev` or `npm run start` to run dev or start module defined in `package.json`"
+            ]
+        }
+    },
+    {
+        "header" : "nodeJSFirebase - backend tutorial for CRUD operations using Firebase in realtime",
+        "language" : "JavsScript",
+        "framework" : "Google Firebase, NodeJS, Express",
+        "github" : "https://github.com/chintan2011/nodeJSFirebase",
+        "hostingUrl": "",
+        "content" : {
+            "title" : "Codebase for this website is built entirely from scratch.",
+            "subtitle" : "To get started, you are required to have Google Firebase account",
+            "steps": [
+                "Realtime CRUD operations using Firebase, Express and nodeJS"
+            ]
+        }
+    },
+    {
+        "header" : "Create Resume Website",
+        "language" : "JavsScript, HTML, CSS",
+        "framework" : "React, Bootstrap",
+        "github" : "https://github.com/chintan2011/Resume",
+        "hostingUrl": "",
+        "content" : {
+            "title" : "",
+            "subtitle" : "To Create your own resume website using simple React components.",
+            "steps": [
+                "Download or clone the repo <br> `git clone https://github.com/chintan2011/Resume`",
+                "Goto Resume/chintansavalia <br> `cd Resume/chintansavalia`",
+                "Install all the depedencies <br> `npm install`",
+                "##### Note: make sure you are in the directory where package.json is there<p>",
+                "Start local development server <br> `npm start`",
+                "Edit the components with your liking and data <strong>:)</strong>"
             ]
         }
     }
