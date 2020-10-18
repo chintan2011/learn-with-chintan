@@ -1,5 +1,50 @@
 [
     {
+        "header" : "Pass JSON body to React component as Prop",
+        "language" : "JavaScript",
+        "framework" : "React",
+        "github" : "",
+        "hostingUrl": "",
+        "content" : {
+            "title" : "",
+            "subtitle" : "We will pass a JSON object to a React component which renders the JSON data",
+            "steps": [
+                "For example, we have sample data in array of JSON objects as below in file called `data.json`",
+                "`[`",
+                "`{\"student\" : \"Andrew\", \"details\" : {\"age\" : 15, \"school\" :  \"Algonquin\"}},`",
+                "`{\"student\" : \"Bob\", \"details\" : {\"age\" : 12, \"school\" :  \"Boston\"}}`",
+                "`]`",
+                "Import the file into your React app",
+                "`import data from './data.json';`",
+                "Create a React component called `RenderData` in new file called `RenderData.js` (don't forget to add usual react component headers, `import React from 'react'`) that accepts `JSON` body and renders it out.",
+                "`function RenderData({data}){`",
+                "`return(`",
+                "`<div>`",
+                "`<h2>Student Name={data.student}</h1>`",
+                "`<h3>Student Age={data.details.age}</h3>`",
+                "`<h3>Student School={data.details.school}</h3>`",
+                "`</div>`",
+                "`}`",
+                "The code block in our `RenderData` component will render data like,",
+                "## Student Name=Andrew",
+                "### Student Age=15",
+                "### Student School=Algonquin<p>",
+                "##### <strong> Note: Here you could also use `JSON.stringify(data)` to display data but we used `<h2>, <h3>` tags so we can display the data differently</strong><p>",
+                "Now if you noticed our component accepts only single JSON data set and we have multiple data sets in form of array.",
+                "We will use `map()` function to pass individual data set to our component.",
+                "Back to our file where we imported JSON data (`import data from './data.json';`)",
+                "Inside `<div>` block, add the following code",
+                "`{`",
+                "`data.map((data)=>{`",
+                "`return(`",
+                "`<RenderData data={data}/>`",
+                "`})`",
+                "`}`"
+
+            ]
+        }
+    },
+    {
         "header" : "Add markdown in your django app like GitHub",
         "language" : "Python",
         "framework" : "```django-markdown-deux``` with Django",
