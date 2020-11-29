@@ -2,12 +2,10 @@
     text-align: center;
     border: 10px solid green;
     margin: 20px;
-    padding: 50px;
+    padding: 30px 20px;
     border-radius: 15px;
     cursor: pointer;
-    word-wrap    : break-word;
     overflow-wrap: break-word;
-    height: auto;
 }
 
 .profile__picture{

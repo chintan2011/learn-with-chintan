@@ -72,7 +72,7 @@
         "hostingUrl": "",
         "content" : {
             "title" : "In this tutorial we will be learning how to add programming language images to your django html page.",
-            "subtitle" : "My approach will be using icons from here for getting icons so we dont need to download, store and manage all the tech images into our django app, thus saving space.",
+            "subtitle" : "My approach will be using icons from here for getting icons so we dont need to download, store and manage all the tech images into our django app, thus **saving space**.",
             "steps": [
                 "First, lets add a new field into our ```models.py```.",
                 "```images = ListCharField(base_field=CharField(max_length=100),size=6,blank=True,max_length=(6 * 1000) # 6 * 10 character nominals, plus commas)```",

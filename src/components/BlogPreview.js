@@ -28,6 +28,7 @@ function BlogPreview({ data }) {
     const linkName=readMore?'Read Less':'Read More'
 
     return (
+        
         <div className="blog-preview-container">
             <div className="react-card">
                 <div className="react-card-header">
@@ -44,11 +45,10 @@ function BlogPreview({ data }) {
                 <div className="react-card-github">
                     {
                         (()=> {
-                            console.log(data.github)
                             if(data.github){
                                 return(
                                     <div>
-                                        <h6>Github: <a href="{data.github}">{data.github}</a></h6>
+                                        <h6>Github: <a href={data.github}>{data.github}</a></h6>
                                     </div>
                                 )
                             }
@@ -60,7 +60,6 @@ function BlogPreview({ data }) {
                 <div className="react-card-hosting">
                 {
                         (()=> {
-                            console.log(data.hostingUrl)
                             if(data.hostingUrl){
                                 return(
                                     <div>
