@@ -5,7 +5,7 @@ import SocialInfo from './SocialInfo'
 
 function ContactInfo() {
     return (
-        <a href="https://portfolio-491bd.web.app/">
+        <a href="https://chintansavalia-2a5ca.web.app">
             <div className="contact-info-container">
             <img src={my_icon} className="profile__picture" alt="logo"/>
             <p className="portfolio-text">Visit my Portfolio Here</p>
